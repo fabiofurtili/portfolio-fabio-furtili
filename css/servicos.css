@@ -1,0 +1,71 @@
+/* Estilos específicos para a página Serviços */
+.sessao {
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sessao h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.servicos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 5px;
+}
+
+.servico {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.servico-icon {
+    font-size: 2rem;
+    color: #343434;
+    margin-bottom: 20px;
+}
+
+.servico h2 {
+    font-size: 1.3rem;
+    margin: 20px 0 10px;
+    color: #343434;
+}
+
+.servico p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.servico .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4bbcdb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    margin-top: auto;
+}
+
+.servico .btn:hover {
+    background-color: #0284a8;
+    transform: translateY(-5px);
+}

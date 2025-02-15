@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Confira os projetos realizados no meu portfólio profissional.">
+    <title>Projetos - Fábio Furtili</title>
+
+    <link rel="icon" href="img/codigo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/projetos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- Botão Hamburger -->
+    <button id="menu-hamburger" class="menu-hamburger">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Janela do Menu Mobile -->
+    <div id="menu-mobile" class="menu-mobile">
+        <button id="fechar-menu" class="fechar-menu">
+            <i class="bi bi-x"></i>
+        </button>
+        <ul>
+            <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
+            <li><a href="projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
+            <li><a href="servicos.html"><i class="fas fa-briefcase"></i> Serviços</a></li>
+            <li><a href="habilidades.html"><i class="fas fa-brain"></i> Habilidades</a></li>
+            <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
+        </ul>
+    </div>
+
+    <!-- Menu Lateral Fixo -->
+    <nav class="navegacao">
+        <ul>
+            <li class="menu-list">
+                <a href="index.html">
+                    <span class="icon"><i class="bi bi-house-fill"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="projetos.html">
+                    <span class="icon"><i class="fas fa-code"></i></span>
+                    <span class="title">Projetos</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="servicos.html">
+                    <span class="icon"><i class="fas fa-briefcase"></i></span>
+                    <span class="title">Serviços</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="habilidades.html">
+                    <span class="icon"><i class="fas fa-brain"></i></span>
+                    <span class="title">Habilidades</span>
+                </a>
+            </li>
+            <li class="menu-list">
+                <a href="contato.html">
+                    <span class="icon"><i class="fas fa-envelope"></i></span>
+                    <span class="title">Contato</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="conteudo-principal">
+        <section class="sessao">
+            <h1>Projetos Realizados</h1>
+            <p class="descricao">Aqui estão alguns dos projetos que realizei ao longo da minha carreira.</p>
+
+            <!-- Filtro por Categoria -->
+            <!-- Filtro por Categoria -->
+            <div class="filtro-categorias">
+                <a href="#" class="filtro-btn active" data-categoria="todos">Ver Tudo</a>
+                <a href="#" class="filtro-btn" data-categoria="web">web</a>
+                <a href="#" class="filtro-btn" data-categoria="mobile">desktop</a>
+                <a href="#" class="filtro-btn" data-categoria="design">dados</a>
+            </div>
+
+
+            <!-- Container de Projetos -->
+            <div class="projetos-container">
+                <div class="projeto" data-categoria="web">
+                    <img src="img/projetos/sitefotografo.jpg" alt="Projeto 1 - Site de E-commerce">
+                    <div class="conteudo-projeto">
+                        <h2>Site para Fotografo</h2>
+                        <p>Site desenvolvido em HTML, CSS e JavaScript. Totalmente responsivo.</p>
+                        <div class="overlay">
+                            <a href="img/projetos/sitefotografo.jpg" class="btn-overlay" target="_blank">Ver Imagem</a>
+                            <a href="#" class="btn-overlay">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="desktop">
+                    <img src="img/projetos/calculacom.png" alt="Aplicativo - CalculaCom">
+                    <div class="conteudo-projeto">
+                        <h2>Validador de comissão</h2>
+                        <p>Programa criado em Python com base em Excel para atender demandas de comissão para empresa Safeeds.</p>
+                        <div class="overlay">
+                            <a href="img/projetos/calculacom.png" class="btn-overlay" target="_blank">Ver Imagem</a>
+                            <a href="https://github.com/fabiofurtili/CalculaComissao" class="btn-overlay">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="desktop">
+                    <img src="img/construcao.png" alt="Projeto 1 - Site de E-commerce">
+                    <div class="conteudo-projeto">
+                        <h2>Em construção</h2>
+                        <p>Em construção.</p>
+                        <div class="overlay">
+                            <a href="img/construcao.png" class="btn-overlay" target="_blank">Ver Imagem</a>
+                            <a href="#" class="btn-overlay">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="projeto" data-categoria="dados">
+                    <img src="img/construcao.png" alt="Projeto 1 - Site de E-commerce">
+                    <div class="conteudo-projeto">
+                        <h2>Em contrução</h2>
+                        <p>Em construção.</p>
+                        <div class="overlay">
+                            <a href="img/construcao.png" class="btn-overlay" target="_blank">Ver Imagem</a>
+                            <a href="#" class="btn-overlay">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Adicione mais projetos aqui -->
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p>&copy; 2025 Fábio Furtili. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/projetos.js"></script>
+
+</body>
+
+</html>

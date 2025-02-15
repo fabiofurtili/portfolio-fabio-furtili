@@ -1,0 +1,227 @@
+/* Reset básico */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", serif;
+    line-height: 1.6;
+    color: #303030;
+    background-image: url('../img/background3.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center; 
+    background-attachment: fixed; 
+}
+
+/* Menu Lateral */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #343434;
+    box-shadow: 10px 0 0 #4bbcdb;
+    border-right: 10px solid #4bbcdb;
+    border-left: 10px solid #343434;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.navegacao ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 0;
+    padding-top: 250px;
+}
+
+.navegacao ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+    padding: 10px 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.navegacao ul li a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.navegacao ul li a .icon {
+    position: relative;
+    display: flex;
+    min-width: 60px;
+    height: auto;
+    text-align: center;
+    line-height: 25px;
+    padding: 10px 10px;
+}
+
+.navegacao ul li a .icon i {
+    position: relative;
+    font-size: 21px;
+    z-index: 1;
+}
+
+.navegacao ul li a .title {
+    position: relative;
+    display: block;
+    padding-left: 20px;
+    height: auto;
+    white-space: nowrap;
+}
+
+.navegacao ul li.active {
+    background-color: #4bbcdb;
+}
+
+.navegacao ul li.active a::before {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #343434;
+    border-radius: 50%;
+    box-shadow: 13px 13px 0 #4bbcdb;
+}
+
+.navegacao ul li.active a::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #343434;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #4bbcdb;
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    margin-left: calc(250px + 20px); 
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transition: margin-left 0.5s; 
+}
+
+/* Rodapé */
+.rodape {
+    text-align: center; 
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    position: fixed; 
+    width: calc(100% - 260px); 
+    height: 40px;
+    bottom: 0;
+    right: 0; 
+    transition: margin-left 0.5s, width 0.5s;
+}
+
+.navegacao:hover ~ .rodape {
+    margin-left: 230px; 
+    width: calc(100% - 260px); 
+}
+
+/* Estilo do botão hamburger */
+.menu-hamburger {
+    display: none; /* Esconder por padrão */
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #4bbcdb;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilo da janela do menu mobile */
+.menu-mobile {
+    display: none; /* Esconder por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #343434;
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-mobile ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.menu-mobile ul li {
+    margin: 20px 0;
+}
+
+.menu-mobile ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-mobile ul li a i {
+    margin-right: 10px;
+}
+
+/* Estilo do botão de fechar */
+.fechar-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-hamburger {
+        display: block;
+    }
+
+    .navegacao {
+        display: none; /* Esconder o menu lateral em dispositivos móveis */
+    }
+
+    .conteudo-principal {
+        margin-left: 15px; /* Ajusta a margem para dispositivos móveis */
+    }
+
+    .rodape {
+        width: 100%; /* Ocupa 100% da largura */
+        left: 0; /* Alinha à esquerda */
+        right: 0; /* Alinha à direita */
+        margin-left: 0; /* Remove a margem esquerda */
+    }
+}
