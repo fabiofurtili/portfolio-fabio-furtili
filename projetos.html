@@ -18,28 +18,18 @@
 </head>
 
 <body>
-
-    <!-- Botão Hamburger -->
-    <button id="menu-hamburger" class="menu-hamburger">
-        <i class="bi bi-list"></i>
-    </button>
-
-    <!-- Janela do Menu Mobile -->
-    <div id="menu-mobile" class="menu-mobile">
-        <button id="fechar-menu" class="fechar-menu">
-            <i class="bi bi-x"></i>
-        </button>
-        <ul>
-            <li><a href="index.html"><i class="bi bi-house-fill"></i> Home</a></li>
-            <li><a href="projetos.html"><i class="fas fa-code"></i> Projetos</a></li>
-            <li><a href="servicos.html"><i class="fas fa-briefcase"></i> Serviços</a></li>
-            <li><a href="habilidades.html"><i class="fas fa-brain"></i> Habilidades</a></li>
-            <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
-        </ul>
-    </div>
-
     <!-- Menu Lateral Fixo -->
     <nav class="navegacao">
+
+        <!-- Botão Hamburger Animado -->
+        <button id="menu-hamburger" class="menu-hamburger">
+            <div class="animated-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
         <ul>
             <li class="menu-list">
                 <a href="index.html">
@@ -72,6 +62,14 @@
                 </a>
             </li>
         </ul>
+        <div class="sociais-bar">
+            <a href="https://github.com/fabiofurtili" target="_blank" class="link-bar"><i
+                class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/fabiofurtili" target="_blank" class="link-bar"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="https://instagram.com/fabiofurtili" target="_blank" class="link-bar"><i
+                    class="fab fa-instagram"></i></a>
+        </div>
     </nav>
 
     <!-- Conteúdo Principal -->
@@ -107,10 +105,12 @@
                     <img src="img/projetos/calculacom.png" alt="Aplicativo - CalculaCom">
                     <div class="conteudo-projeto">
                         <h2>Validador de comissão</h2>
-                        <p>Programa criado em Python com base em Excel para atender demandas de comissão para empresa Safeeds.</p>
+                        <p>Programa criado em Python com base em Excel para atender demandas de comissão para empresa
+                            Safeeds.</p>
                         <div class="overlay">
                             <a href="img/projetos/calculacom.png" class="btn-overlay" target="_blank">Ver Imagem</a>
-                            <a href="https://github.com/fabiofurtili/CalculaComissao" class="btn-overlay">Ver Detalhes</a>
+                            <a href="https://github.com/fabiofurtili/CalculaComissao" class="btn-overlay">Ver
+                                Detalhes</a>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,11 @@
 /* Estilos específicos para a página Serviços */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
+}
+
 .sessao {
     backdrop-filter: blur(10px);
     border-radius: 10px;
@@ -6,6 +13,7 @@
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
 .sessao h1 {
@@ -18,7 +26,8 @@
 .servicos-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 5px;
+    gap: 50px;
+    margin-bottom: 40px;
 }
 
 .servico {
@@ -68,4 +77,33 @@
 .servico .btn:hover {
     background-color: #0284a8;
     transform: translateY(-5px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .sessao {
+        padding: 20px; /* Reduza o padding em dispositivos móveis */
+    }
+
+    .sessao h1 {
+        font-size: 2rem; /* Reduza o tamanho da fonte do título */
+        margin-bottom: 20px; /* Reduza a margem inferior */
+    }
+
+    .servicos-container {
+        grid-template-columns: 1fr; /* Uma coluna em dispositivos móveis */
+        gap: 40px; /* Ajuste o gap para dispositivos móveis */
+    }
+
+    .servico {
+        padding: 15px; /* Reduza o padding interno */
+    }
+
+    .servico h2 {
+        font-size: 1.2rem; /* Reduza o tamanho da fonte do título do serviço */
+    }
+
+    .servico p {
+        font-size: 1rem; /* Reduza o tamanho da fonte do parágrafo */
+    }
 }

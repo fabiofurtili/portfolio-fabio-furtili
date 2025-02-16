@@ -30,32 +30,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Menu mobile
     const menuHamburger = document.getElementById('menu-hamburger');
-    const menuMobile = document.getElementById('menu-mobile');
-    const fecharMenu = document.getElementById('fechar-menu');
+    const navegacao = document.querySelector('.navegacao');
 
-    // Abrir o menu mobile
+    // Verifica a largura da tela ao carregar a página
+    function ajustarMenuMobile() {
+        if (window.innerWidth <= 768) {
+            navegacao.style.width = '75px'; // Inicia recolhido em dispositivos móveis
+            navegacao.classList.remove('expandido');
+        } else {
+            navegacao.style.width = '250px'; // Inicia expandido em desktop
+            navegacao.classList.add('expandido');
+        }
+    }
+
+    // Ajusta o menu ao carregar a página
+    ajustarMenuMobile();
+
+    // Ajusta o menu ao redimensionar a janela
+    window.addEventListener('resize', ajustarMenuMobile);
+
+    // Abrir/fechar o menu lateral e animar o botão hamburger
     if (menuHamburger) {
         menuHamburger.addEventListener('click', function () {
-            menuMobile.style.display = 'flex';
+            // Alternar a classe "active" no botão hamburger
+            menuHamburger.classList.toggle('active');
+
+            // Alternar a classe "expandido" no menu lateral
+            navegacao.classList.toggle('expandido');
+
+            // Alternar a largura do menu lateral
+            if (navegacao.classList.contains('expandido')) {
+                navegacao.style.width = '250px'; // Expandir o menu
+            } else {
+                navegacao.style.width = '75px'; // Recolher o menu
+            }
         });
     }
 
-    // Fechar o menu mobile
-    if (fecharMenu) {
-        fecharMenu.addEventListener('click', function () {
-            menuMobile.style.display = 'none';
-        });
-    }
-
-    // Fechar o menu ao clicar em um link
-    const linksMenu = document.querySelectorAll('.menu-mobile ul li a');
+    // Fechar o menu ao clicar em um link (opcional)
+    const linksMenu = document.querySelectorAll('.navegacao ul li a');
     linksMenu.forEach(link => {
         link.addEventListener('click', function () {
-            menuMobile.style.display = 'none';
+            if (window.innerWidth <= 768) { // Apenas em dispositivos móveis
+                navegacao.style.width = '75px'; // Recolher o menu
+                navegacao.classList.remove('expandido');
+                menuHamburger.classList.remove('active');
+            }
         });
     });
 
-    // Interações específicas por página
+    // Interações específicas por página (mantido igual)
     const currentPage = window.location.pathname.split("/").pop();
 
     if (currentPage === "servicos.html") {

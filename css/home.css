@@ -1,4 +1,11 @@
 /* Estilo comum para todas as boxes */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
 main {
     padding-bottom: 80px; 
 }
@@ -121,7 +128,7 @@ main {
 }
 
 /* Responsividade */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .box {
         width: 90%;       
         max-width: 400px;  
