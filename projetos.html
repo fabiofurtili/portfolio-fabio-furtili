@@ -18,57 +18,50 @@
 </head>
 
 <body>
-    <!-- Menu Lateral Fixo -->
+
+    <!-- Menu -->
     <nav class="navegacao">
 
-        <!-- Botão Hamburger Animado -->
-        <button id="menu-hamburger" class="menu-hamburger">
-            <div class="animated-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </button>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo1.png" alt="Logo">
+            </a>
+        </div>
 
         <ul>
-            <li class="menu-list">
-                <a href="index.html">
-                    <span class="icon"><i class="bi bi-house-fill"></i></span>
-                    <span class="title">Home</span>
-                </a>
+            <li class="menu-list ativo">
+                <a href="index.html"><span class="title">Home</span></a>
             </li>
             <li class="menu-list">
-                <a href="projetos.html">
-                    <span class="icon"><i class="fas fa-code"></i></span>
-                    <span class="title">Projetos</span>
-                </a>
+                <a href="projetos.html"><span class="title">Projetos</span></a>
             </li>
             <li class="menu-list">
-                <a href="servicos.html">
-                    <span class="icon"><i class="fas fa-briefcase"></i></span>
-                    <span class="title">Serviços</span>
-                </a>
+                <a href="servicos.html"><span class="title">Serviços</span></a>
             </li>
             <li class="menu-list">
-                <a href="habilidades.html">
-                    <span class="icon"><i class="fas fa-brain"></i></span>
-                    <span class="title">Habilidades</span>
-                </a>
+                <a href="habilidades.html"><span class="title">Habilidades</span></a>
             </li>
             <li class="menu-list">
-                <a href="contato.html">
-                    <span class="icon"><i class="fas fa-envelope"></i></span>
-                    <span class="title">Contato</span>
-                </a>
+                <a href="contato.html"><span class="title">Contato</span></a>
             </li>
         </ul>
+
+        <!-- Social Bar -->
         <div class="sociais-bar">
-            <a href="https://github.com/fabiofurtili" target="_blank" class="link-bar"><i
-                class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/fabiofurtili" target="_blank" class="link-bar"><i
-                    class="fab fa-linkedin"></i></a>
-            <a href="https://instagram.com/fabiofurtili" target="_blank" class="link-bar"><i
-                    class="fab fa-instagram"></i></a>
+            <a href="https://github.com/fabiofurtili" target="_blank" class="link-bar">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/fabiofurtili" target="_blank" class="link-bar">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://instagram.com/fabiofurtili" target="_blank" class="link-bar">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <!-- Toggle (apenas para mobile) -->
+        <div class="toggle">
+            <i class="bi bi-list menu" aria-label="Toggle Menu"></i>
         </div>
     </nav>
 
@@ -76,7 +69,7 @@
     <main class="conteudo-principal">
         <section class="sessao">
             <h1>Projetos Realizados</h1>
-            <p class="descricao">Aqui estão alguns dos projetos que realizei ao longo da minha carreira.</p>
+            <p class="descricao">Aqui estão alguns dos meus projetos.</p>
 
             <!-- Filtro por Categoria -->
             <!-- Filtro por Categoria -->
@@ -147,8 +140,17 @@
         <p>&copy; 2025 Fábio Furtili. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="scripts/scripts.js"></script>
     <script src="scripts/projetos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.menu').click(function () {
+                $('.navegacao ul').toggleClass('active');
+            });
+        });
+    </script>
+    <script src="scripts/popup.js"></script>
 
 </body>
 

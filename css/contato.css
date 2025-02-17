@@ -1,11 +1,4 @@
 /* Estilos específicos para a página Contato */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Evita rolagem horizontal */
-}
-
 .sessao {
     backdrop-filter: blur(10px);
     border-radius: 10px;

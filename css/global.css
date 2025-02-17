@@ -1,242 +1,183 @@
 /* Reset básico */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
     font-family: "Raleway", serif;
     line-height: 1.6;
     color: #303030;
-    background-image: url('../img/background3.jpg'); 
+}
+
+body {
+    background-image: url('../img/background3.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center; 
-    background-attachment: fixed; 
+    background-position: center center;
+    background-attachment: fixed;
 }
 
-/* Menu Lateral */
+/* Menu */
 .navegacao {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #343434;
-    box-shadow: 5px 0 0 #4bbcdb;
-    border-right: 5px solid #4bbcdb;
-    border-left: 10px solid #343434;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #343434c5;
+    backdrop-filter: blur(10px);
+    padding: 0 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.navegacao.recolhido {
-    width: 75px;
+/* Desktop - Ordenação dos elementos */
+.logo {
+    order: 1;
 }
-
 .navegacao ul {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 0;
-    padding-top: 250px;
+    order: 2;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sociais-bar {
+    order: 3;
+    display: flex;
+    gap: 20px;
+}
+.toggle {
+    order: 4;
+    display: none;
+    font-size: 30px;
+    color: #4bbcdb;
 }
 
+/* Logo */
+.logo img {
+    max-height: 45px;
+    width: auto;
+}
+
+/* Itens do Menu */
 .navegacao ul li {
-    position: relative;
-    list-style: none;
-    width: 100%;
-    padding: 10px 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.navegacao ul li:hover {
+    background: #4bbcdb;
 }
 
 .navegacao ul li a {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.9em;
 }
 
-.navegacao ul li a .icon {
-    position: relative;
-    display: flex;
-    min-width: 30px;
-    height: auto;
-    text-align: center;
-    line-height: 25px;
-    padding: 10px 10px;
-    margin-left: 10px;
+/* Social Bar */
+.sociais-bar a {
+    color: #4bbcdb;
+    text-decoration: none;
+    font-size: 1.8em;
 }
 
-.navegacao ul li a .icon i {
-    position: relative;
-    font-size: 25px;
-    z-index: 1;
-}
-
-.navegacao ul li a .title {
-    position: relative;
-    display: block;
-    padding-left: 20px;
-    height: auto;
-    white-space: nowrap;
-}
-
-.navegacao ul li.active {
-    background-color: #4bbcdb;
-}
-
-.navegacao ul li.active a::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background: #343434;
-    border-radius: 50%;
-    box-shadow: 13px 13px 0 #4bbcdb;
-}
-
-.navegacao ul li.active a::after {
-    content: "";
-    position: absolute;
-    bottom: -40px;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    background: #343434;
-    border-radius: 50%;
-    box-shadow: 15px -15px 0 #4bbcdb;
+.sociais-bar a:hover {
+    color: #0284a8;
 }
 
 /* Conteúdo Principal */
 .conteudo-principal {
-    margin-left: calc(250px + 20px); 
     min-height: 100vh;
     display: grid;
     place-items: center;
     text-align: center;
-    transition: margin-left 0.5s; 
+    transition: 0.5s;
 }
 
-/* Estilo do botão hamburger */
-.menu-hamburger {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 7px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 1000;
-    padding: 10px;
-}
-
-/* Ícone animado */
-.animated-icon {
-    width: 30px;
-    height: 20px;
-    position: relative;
-    transform: rotate(0deg);
-    transition: 0.5s ease-in-out;
-}
-
-.animated-icon span {
-    display: block;
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background: #4bbcdb;
-    border-radius: 3px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
-}
-
-.animated-icon span:nth-child(1) {
-    top: 0;
-}
-
-.animated-icon span:nth-child(2) {
-    top: 8px;
-}
-
-.animated-icon span:nth-child(3) {
-    top: 16px;
-}
-
-/* Animação para o ícone quando o menu está aberto */
-.menu-hamburger.active .animated-icon span:nth-child(1) {
-    top: 8px;
-    transform: rotate(135deg);
-}
-
-.menu-hamburger.active .animated-icon span:nth-child(2) {
-    opacity: 0;
-    left: -30px;
-}
-
-.menu-hamburger.active .animated-icon span:nth-child(3) {
-    top: 8px;
-    transform: rotate(-135deg);
-}
-
-/* Estilo da barra de redes sociais */
-.sociais-bar {
-    position: absolute;
-    bottom: 80px; 
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center; 
-    gap: 27px; 
-    padding: 10px 0; 
-    background-color: #343434; 
-    border-top: 1px solid #4bbcdb;
-}
-
-/* Estilo dos links de redes sociais */
-.sociais-bar .link-bar {
-    color: #4bbcdb; /* Cor dos ícones */
-    font-size: 32px; /* Tamanho dos ícones */
-    transition: color 0.3s ease; /* Transição suave para o hover */
-}
-
-/* Efeito hover nos ícones */
-.sociais-bar .link-bar:hover {
-    color: #fff; /* Cor ao passar o mouse */
-}
-
-
+/* Rodapé */
 .rodape {
-    text-align: center; 
-    justify-content: flex-end; 
-    align-items: center; 
-    background: #343434;
+    text-align: center;
+    justify-content: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #343434c5;
+    backdrop-filter: blur(10px);
     color: #fff;
     font-size: 15px;
-    display: flex;
-    padding: 10px 30px; 
-    height: 30px; 
+    padding: 10px 30px;
+    height: 30px;
 }
 
-/* Responsividade para dispositivos móveis */
+/* Pop-up imagem */
+.image-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.image-popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-popup-container img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 10px #343434;
+}
+  
+
+/* Responsividade */
 @media (max-width: 768px) {
     .navegacao {
-        width: 75px; /* Menu recolhido por padrão */
-        z-index: 1000;
+        flex-wrap: wrap;
     }
-    .conteudo-principal {
-        margin-left: 100px; /* Ajusta a margem para o menu recolhido */
+    
+    .logo {
+        display: none;
     }
+    
+    .toggle {
+        display: block;
+        order: 1;
+        width: 100%;
+        text-align: right;
+    }
+    
+    .navegacao ul {
+        order: 2;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-out;
+        flex-direction: column;
+    }
+    
+    .navegacao ul li {
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .navegacao ul.active {
+        max-height: 600px
+    }
+    
     .sociais-bar {
-        flex-direction: column; /* Alinha os ícones verticalmente */
-        align-items: center; /* Centraliza os ícones horizontalmente */
-        gap: 10px; /* Espaçamento entre os ícones */
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding: 10px 0;
     }
-
 }

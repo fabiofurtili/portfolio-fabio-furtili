@@ -9,7 +9,7 @@
 .skills-section {
     flex: 0 0 calc(50% - 10px); 
     max-width: calc(50% - 10px);
-    min-width: 250px; 
+    min-width: 245px; 
     margin: 0; 
     padding: 20px; 
     border-radius: 12px;
@@ -114,8 +114,8 @@
         flex-wrap: wrap;
     }    
     .skills-section {
-        flex: 0 0 100%; 
-        max-width: 100%;
+        flex: 0 0 80%; 
+        max-width: 80%;
         margin: 10px 0; 
     }
 
@@ -125,6 +125,6 @@
     }
 
     .formacao {
-        max-width: 100%; 
+        max-width: 85%; 
     }
 }
